@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Голосове введення тексту українською</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+    
+        <!-- ПОВІДОМЛЕННЯ ПРО ПОМИЛКИ -->
+        <div id="errorMessage" class="error-message"></div>
+
+        <!-- СЕКЦІЯ З МІКРОФОНОМ -->
+        <div class="microphone-section">
+            <div style="text-align: center;">
+                <button id="micButton" class="mic-button inactive" title="Клікніть для запису голосу">
+                    <span class="material-icons">mic</span>
+                </button>
+                <div class="status-text" id="statusText">Готово до запису</div>
+            </div>
+        </div>
+
+        <!-- СЕКЦІЯ ВВЕДЕННЯ ТЕКСТУ -->
+        <div class="textarea-section">
+            <div class="textarea-header">
+                <label class="section-label">Розпізнаний текст</label>
+                <button id="clearTextBtn" class="btn-clear" title="Очистити текст">
+                    <span class="material-icons">clear</span>
+                </button>
+            </div>
+            <textarea id="textInput" placeholder="Тут з'явиться текст після розпізнавання голосу..."></textarea>
+        </div>
+
+        <!-- СЕКЦІЯ ЛОГУВАННЯ -->
+        <div class="log-section">
+            <div class="log-header">
+                <label class="section-label">Історія розпізнаних фраз</label>
+                <div class="log-buttons">
+                    <button id="copyAllBtn" class="btn-primary" style="display: none;">
+                        <span class="material-icons">content_copy</span> Копіювати все
+                    </button>
+                    <button id="clearLogBtn" class="btn-danger" style="display: none;">
+                        <span class="material-icons">delete</span> Очистити лог
+                    </button>
+                </div>
+            </div>
+            <div class="log-list" id="logList">
+                <div class="log-empty">Логування розпочнеться після першого розпізнавання фрази</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
